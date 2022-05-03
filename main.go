@@ -1,7 +1,11 @@
 package main
 
-import "go.uber.org/fx"
+import (
+	"healthchecker/bootstrap"
+
+	"go.uber.org/fx"
+)
 
 func main() {
-	fx.New().Run()
+	fx.New(bootstrap.Module).Run()
 }

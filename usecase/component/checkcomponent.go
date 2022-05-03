@@ -33,7 +33,7 @@ func IsUrlHealth(url string) (bool, error) {
 }
 
 func (c CheckComponentUseCase) Check() {
-	c.logger.Debug("CheckComponentUseCase :: Checking components status")
+	c.logger.Info("CheckComponentUseCase :: Checking components status")
 
 	for _, cp := range c.service.GetComponents() {
 		c.logger.Debug("Component Name: ", cp.Name)
