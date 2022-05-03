@@ -1,0 +1,12 @@
+environment: development
+
+mode: local
+
+app:
+  healthchecker_job:
+    frequency_millisecond: 1000
+
+aws:
+  region: sa-east-1
+  dynamo:
+    endpoint: http://localhost:8000

@@ -29,8 +29,8 @@ func (s ComponentService) UpdateComponent(component model.Component) error {
 	return nil
 }
 
-func (s ComponentService) GetComponents() ([]model.Component, error) {
+func (s ComponentService) GetComponents() []model.Component {
 	s.l.Debug("ComponentService :: getting components")
 	list := []model.Component{{ID: 1, Name: "EKS", Url: "https://eks.teste.com.br", Retry: 2, IsHealth: true}}
-	return list, nil
+	return list
 }
