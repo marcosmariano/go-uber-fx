@@ -1,6 +1,7 @@
 package config
 
 import (
+	"healthchecker/adapters/logger"
 	"log"
 
 	"github.com/spf13/viper"
@@ -15,7 +16,7 @@ type Config struct {
 	Viper *viper.Viper
 }
 
-func NewConfig() Config {
+func NewConfig(logger logger.Logger) Config {
 	viper.AddConfigPath(".")
 	viper.SetConfigName("healthchecker")
 	viper.SetConfigType("yaml")
@@ -26,6 +27,8 @@ func NewConfig() Config {
 	if err != nil {
 		log.Fatal("Error on load configuration file")
 	}
+
+	logger.Info("Config loaded")
 
 	return Config{
 		Viper: viper.GetViper(),
